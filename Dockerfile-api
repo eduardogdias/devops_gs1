@@ -1,22 +1,19 @@
 ARG JAVA_VERSION=17
-FROM maven:3.9.5-eclipse-temurin-${JAVA_VERSION}
+FROM maven:3.9-eclipse-temurin-${JAVA_VERSION}-alpine
 
-ENV NOME_JAR=demo
-ENV VERSAO_JAR=0.0.1-SNAPSHOT
-ENV NOME_USUARIO=rotasegura
+
+ARG NOME_JAR=demo
+ARG VERSAO_JAR=0.0.1-SNAPSHOT
+ARG NOME_USUARIO=rotasegura
 
 RUN adduser -D ${NOME_USUARIO}
-
 WORKDIR /home/${NOME_USUARIO}/app
 
 COPY . .
 
-RUN mvn clean install -DskipTests
-
-COPY target/${NOME_JAR}-${VERSAO_JAR}.jar app.jar
+RUN mvn clean install -DskipTests && cp target/${NOME_JAR}-${VERSAO_JAR}.jar app.jar
 
 USER ${NOME_USUARIO}
 
 EXPOSE 8080
-
 ENTRYPOINT ["java", "-jar", "app.jar"]
