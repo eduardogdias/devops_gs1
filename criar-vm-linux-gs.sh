@@ -37,12 +37,12 @@ echo "Abrindo a segunda porta: $PORT2 para o Oracle..."
 az vm open-port --port $PORT2 --priority 1002 --resource-group $RESOURCE_GROUP --name $VM_NAME
 
 # Instalar Git na VM após a criação
-echo "Instalando o Git dentro da VM e clonando o repositório"
+echo "Instalando o Git e Nano dentro da VM"
 az vm run-command invoke \
   --resource-group $RESOURCE_GROUP \
   --name $VM_NAME \
   --command-id RunShellScript \
-  --scripts "sudo yum install git nano maven -y"
+  --scripts "sudo yum install git nano -y"
 
 # Instalar Docker na VM após a criação
 echo "Instalando e configurando Docker na VM"
