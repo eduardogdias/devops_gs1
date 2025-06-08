@@ -370,15 +370,19 @@ E já será possível visualizar as tabelas criadas pela API.
 ## Listando
 
 **docker image ls**
+
 ![](images/image.png)
 
 **docker ps -a**
+
 ![](images/container.png)
 
 **docker volume ls**
+
 ![](images/volume.png)
 
 **docker network ls**
+
 ![](images/network.png)
 
 ---
@@ -386,5 +390,6 @@ E já será possível visualizar as tabelas criadas pela API.
 ## Excluindo a VM:
 
 ![](images/vmRemocao1.png)
+
 ![](images/vmRemocao2.png)
 
