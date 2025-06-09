@@ -17,6 +17,7 @@ Além disso, o app conta com:
 - **Busca por abrigos** próximos para quem está em situação de risco.
 - **Voluntariado:** você pode se registrar como voluntário ou buscar ajuda próxima.
 
+![Vídeo Pitch](https://www.youtube.com/watch?v=EO3ZblhblpI)
 ---
 
 ## Tecnologias Utilizadas
